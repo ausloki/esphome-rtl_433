@@ -1,7 +1,8 @@
 # esphome-rtl_433
 
 ESPHome **decode** component for Fine Offset / Ecowitt outdoor arrays.
-Consumed by [ausloki/ecowitt_systems](https://github.com/ausloki/ecowitt_systems).
+Consumed by [ausloki/ecowitt_systems](https://github.com/ausloki/ecowitt_systems)
+(**WS69** on that bench).
 
 ## Split
 

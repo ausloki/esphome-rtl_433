@@ -1,11 +1,14 @@
 # Protocol allowlist
 
+This repo is consumed by [ausloki/ecowitt_systems](https://github.com/ausloki/ecowitt_systems).
+That bench's outdoor array is **Ecowitt WS69** (confirmed 2026-08-17).
+
 Compiled in via `-DMY_RTL433_DEVICES=...` so the S3 does not carry the full
 rtl_433 device table.
 
 | DECL | rtl_433 model | Why |
 | --- | --- | --- |
-| `fineoffset_WH25` | Fineoffset-WH24 / Fineoffset-WH65B | WN67 5-in-1 family; truncated WS69 may appear as WH65B |
+| `fineoffset_WH25` | Fineoffset-WH24 / Fineoffset-WH65B | Truncated WS69 packets may appear as WH65B |
 | `fineoffset_wh1080` | Fineoffset-WHx080 | Related Fine Offset 5-in-1 OOK |
 | `fineoffset_wh1080_fsk` | Fineoffset-WHx080 | FSK variant |
 
