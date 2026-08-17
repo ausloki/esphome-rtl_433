@@ -1,0 +1,20 @@
+# Example only — not the ecowitt_systems firmware.
+# Radio pins stay unclaimed until the CC1101 is fitted on that board.
+#
+# ESP-IDF, GDO0-only remote_receiver, stock cc1101, this rtl_433 component.
+
+external_components:
+  - source:
+      type: local
+      path: ../components
+    components: [rtl_433]
+
+# spi: / cc1101: / remote_receiver: belong in the firmware YAML that owns the
+# GPIO restrict list. This file only shows the decode stanza:
+
+# rtl_433:
+#   receiver_id: rf_receiver
+#   on_json_message:
+#     then:
+#       - logger.log:
+#           format: "rtl_433 json received"

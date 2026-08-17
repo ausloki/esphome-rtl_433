@@ -1,0 +1,11 @@
+# Package snippet: add this rtl_433 ESPHome component.
+# Radio frontend stays stock ESPHome cc1101 + remote_receiver in the firmware YAML.
+# Do not add cc1101: here — GPIOs are claimed in the firmware repo.
+external_components:
+  - source: github://ausloki/esphome-rtl_433
+    components: [rtl_433]
+  # local bring-up (sibling of ecowitt_systems):
+  # - source:
+  #     type: local
+  #     path: ../esphome-rtl_433/components
+  #   components: [rtl_433]
