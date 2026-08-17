@@ -13,8 +13,6 @@ from esphome.const import (
     CONF_TRIGGER_ID,
     CONF_ID,
 )
-from esphome.core import CORE
-
 CODEOWNERS = ["@ausloki"]
 DEPENDENCIES = ["esp32"]
 
@@ -40,7 +38,8 @@ RTL433Trigger = rtl433_ns.class_(
 )
 
 CONFIG_SCHEMA = cv.All(
-    cv.only_with_esp32,
+    cv.only_on_esp32,
+    cv.only_with_framework("esp-idf"),
     cv.Schema(
         {
             cv.GenerateID(): cv.declare_id(RTL433Decoder),
@@ -58,11 +57,6 @@ CONFIG_SCHEMA = cv.All(
 
 
 async def to_code(config):
-    if CORE.using_arduino:
-        raise cv.Invalid(
-            "ausloki/esphome-rtl_433 requires ESP-IDF (not the Arduino framework)"
-        )
-
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
